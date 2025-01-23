@@ -1,7 +1,10 @@
 const express = require('express');
-const { createBlog, getBlogs } = require('../controllers/blogController');
-const { protect } = require('../middlewares/authMiddleware');
+const { addComment, deleteComment } = require('../controllers/commentController');
+const checkRole = require('../middlewares/roleMiddleware'); // Updated import statement
+
 const router = express.Router();
-router.post('/', protect, createBlog);
-router.get('/', getBlogs);
+
+// Define your routes here
+// Example: router.post('/comments', checkRole('admin'), addComment);
+
 module.exports = router;
