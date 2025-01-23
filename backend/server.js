@@ -2,9 +2,10 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const helmet = require('helmet');
-const connectDB = require('./config/db');
+const connectDB = require('./config/db');  // Adjust path if necessary
 
 dotenv.config();
+console.log('Environment Variables:', process.env);
 connectDB();
 
 const app = express();
@@ -15,8 +16,9 @@ app.use(helmet());
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/blogs', require('./routes/blogRoutes'));
+app.use('/api/auth', require('./routes/authRoutes'));  // Adjust path if necessary
+app.use('/api/blogs', require('./routes/blogRoutes'));  // Adjust path if necessary
+app.use('/api/comments', require('./routes/commentRoutes'));  // Adjust path if necessary
 
 // Global Error Handler
 app.use((err, req, res, next) => {
