@@ -120,10 +120,6 @@ blog-management/
 - JWT authentication is used to secure API endpoints.
 - CORS and Helmet are used for security hardening.
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Contact
 
 For any inquiries or issues, contact:
